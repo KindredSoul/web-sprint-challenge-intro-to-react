@@ -25,15 +25,6 @@ const App = () => {
 	}, []);
 
 	const StyledDiv = styled.div`
-		body {
-			margin: 0;
-			padding: 0;
-			font-family: sans-serif;
-			background-image: url("./images/pk-bg.jpg");
-			background-size: cover;
-			background-position: center;
-		}
-
 		.container {
 			display: flex;
 			flex-flow: row wrap;
