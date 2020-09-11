@@ -1,6 +1,7 @@
 // Write your Character component here
 import React, { useState, useEffect } from "react";
 import "../components/Character.css";
+import styled from "styled-components";
 import Axios from "axios";
 import DexEntry from "./DexEntry";
 
@@ -23,8 +24,18 @@ function PokeChar(props) {
 		return string.charAt(0).toUpperCase() + string.slice(1);
 	};
 
+	const StyledCard = styled.div`
+		.pokeCard {
+			width: 28%;
+			min-width: 28%;
+			margin: 2%;
+			background: rgba(0, 0, 0, 0.5);
+			color: white;
+		}
+	`;
+
 	return (
-		<div className="pokeCard">
+		<StyledCard className="pokeCard">
 			<h1>{capitalize(name)}</h1>
 			<DexEntry
 				capitalize={capitalize}
@@ -34,7 +45,7 @@ function PokeChar(props) {
 				types={dex.types}
 				weight={dex.weight}
 			/>
-		</div>
+		</StyledCard>
 	);
 }
 

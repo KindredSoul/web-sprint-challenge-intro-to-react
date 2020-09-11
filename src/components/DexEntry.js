@@ -12,7 +12,7 @@ function DexEntry(props) {
 	} else {
 		return (
 			<div>
-				<h2>
+				<h2 className="abilities">
 					Abilities:{" "}
 					{abilityData.map((ability) =>
 						!abilityData.is_hidden ? (
@@ -20,7 +20,7 @@ function DexEntry(props) {
 						) : null
 					)}
 				</h2>
-				<h2>
+				<h2 className="types">
 					Typing:{" "}
 					{types.map((type) => (
 						<li>{capitalize(type.type.name)}</li>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Axios from "axios";
 import PokeChar from "./components/Character";
+import styled from "styled-components";
 
 const App = () => {
 	// Try to think through what state you'll need for this app before starting. Then build out
@@ -23,15 +24,32 @@ const App = () => {
 			});
 	}, []);
 
+	const StyledDiv = styled.div`
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+			background-image: url("./images/pk-bg.jpg");
+			background-size: cover;
+			background-position: center;
+		}
+
+		.container {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: center;
+		}
+	`;
+
 	return (
-		<div className="App">
+		<StyledDiv className="App">
 			<h1 className="Header">Characters</h1>
 			<div className="container">
 				{data.map((pokeData) => (
 					<PokeChar key={pokeData.name} pokeData={pokeData} />
 				))}
 			</div>
-		</div>
+		</StyledDiv>
 	);
 };
 
